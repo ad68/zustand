@@ -1,7 +1,6 @@
-'use client';
-import React, { useState, useContext, useEffect } from 'react';
-import { useStore } from '../store/bear';
-
+"use client";
+import React, { useState, useContext, useEffect } from "react";
+import { useStore } from "../store/plates";
 
 //
 // ────────────────────────────────────────────────────────── I ──────────
@@ -11,7 +10,7 @@ import { useStore } from '../store/bear';
 
 export default function Index() {
   // ─── Global Variable ────────────────────────────────────────────────────────────
-  const bears = useStore((state) => state.bears);
+  const plates = useStore((state) => state.plates);
   // ─── States ─────────────────────────────────────────────────────────────────────
 
   // ─── Life Cycle ─────────────────────────────────────────────────────────────────
@@ -25,8 +24,7 @@ export default function Index() {
   //
   return (
     <>
-      <h1>{bears} around here...</h1>
-     
+      <h1>{plates} around here...</h1>
     </>
   );
 }

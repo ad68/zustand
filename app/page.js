@@ -1,13 +1,15 @@
-'use client'
-import { useStore } from "./store/bear";
-import Link from 'next/link';
+"use client";
+import { useStore } from "./store/plates";
+import Link from "next/link";
 export default function Home() {
-  const bears = useStore((state) => state.bears)
-  const increasePopulation = useStore((state) => state.increasePopulation)
+  const plates = useStore((state) => state.plates);
+  const increasePlate = useStore((state) => state.increasePlates);
+  const update = useStore((state) => state.updatePlate);
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>{bears} around here...</h1>
-      <button onClick={increasePopulation}>one up</button>
+      <h1>{plates} around here...</h1>
+      <button onClick={increasePlate}>increase plates</button>
+      <button onClick={() => update(255)}>update Plates</button>
       <Link href="/home">home</Link>
     </main>
   );
